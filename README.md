@@ -31,13 +31,13 @@ def factorial(n):
 
 ```python
 def permutation(n,k):
-    None
+    return factorial(n) / factorial(n-k) 
 ```
 
 
 ```python
 def combination(n,k):
-    None
+    return factorial(n) / (factorial(n - k) * factorial(k))
 ```
 
 Great! We can use these functions in the following exercises.
@@ -50,17 +50,31 @@ Flatiron School is holding a mini mathematics contest, and there are 9 people in
 
 
 ```python
-medal_top_3 = None
+medal_top_3 = permutation(9, 3)
 medal_top_3
 ```
+
+
+
+
+    504.0
+
+
 
 #### b. Imagine Flatiron school granting the first three contestants a massive fruit basket. How many ways of selecting three people are there in this case?
 
 
 ```python
-scholarship_top_3 = None
+scholarship_top_3 = combination(9, 3)
 scholarship_top_3
 ```
+
+
+
+
+    84.0
+
+
 
 ## Some more combinations practice
 
@@ -72,23 +86,30 @@ Write the code for getting total number of ways of drawing 2 out of 6 and 3 out 
 
 
 ```python
-draw_cons = None
-draw_vow = None
+draw_cons = combination(6,2)
+draw_vow = combination(4,3)
 ```
 
 The total number of ways to draw 5 letters out of 10 letters.
 
 
 ```python
-sample = None
+sample = combination(10, 5)
 ```
 
 The probability of drawing 2 consonants and 3 vowels when drawing 5 letters:
 
 
 ```python
-None
+draw_cons * draw_vow / sample
 ```
+
+
+
+
+    0.23809523809523808
+
+
 
 #### b. Out of 6 consonants and 4 vowels, how many words with 2 consonants and 3 vowels can be formed?
 
@@ -96,24 +117,40 @@ You can reuse a part of the previous exercise. Which part? print the result belo
 
 
 ```python
-draw_cons = None
-draw_vow = None
+print(draw_cons)# = None
+print(draw_vow)# = None
 ```
+
+    15.0
+    4.0
+
 
 Now we need to take into account that order is important.
 
 
 ```python
-order_5_letters = None
+order_5_letters = factorial(5)#permutation(5, 5)
+order_5_letters
 ```
+
+
+
+
+    120
+
+
 
 The total number of words with 2 consonants and 3 vowels then equals:
 
 
 ```python
-total_words = None
+#total_words = order_5_letters / (factorial(2) * factorial(3))
+#total_words = draw_cons*draw_vow*order_5_letters
 print("In total,",  total_words, "words with 2 consonants and 3 vowels can be formed from our existing letter pool.")
 ```
+
+    In total, 7200.0 words with 2 consonants and 3 vowels can be formed from our existing letter pool.
+
 
 ## Combinations: creating soccer teams
 We're holding a mini soccer tournament and 16 people are participating. We'd like to form 4 teams of 4. How many ways are there to do this?

@@ -144,8 +144,8 @@ The total number of words with 2 consonants and 3 vowels then equals:
 
 
 ```python
-#total_words = order_5_letters / (factorial(2) * factorial(3))
-#total_words = draw_cons*draw_vow*order_5_letters
+total_words = order_5_letters / (factorial(2) * factorial(3))
+total_words = draw_cons*draw_vow*order_5_letters
 print("In total,",  total_words, "words with 2 consonants and 3 vowels can be formed from our existing letter pool.")
 ```
 
@@ -157,13 +157,23 @@ We're holding a mini soccer tournament and 16 people are participating. We'd lik
 
 
 ```python
-None
+first_team = combination(16, 4)
+second_team = combination(12, 4)
+third_team = combination(8, 4)
+fourth_team = combination(4, 4)
 ```
 
 
 ```python
-None  # the answer is 2627625.0
+first_team * second_team * third_team * fourth_team  # the answer is 2627625.0
 ```
+
+
+
+
+    63063000.0
+
+
 
 ## Summary
 
